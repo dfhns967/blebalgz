@@ -3255,7 +3255,6 @@ client.on("message", message => {
       if (role1.position >= message.member.highestRole.position)
         return message.channel.send(
           "you dont have enough perms :rolling_eyes:"
-"
         );
 
       message.mentions.members.first().addRole(role1);
