@@ -4283,9 +4283,11 @@ client.on('message', fkk => {
 }); //OT|| The Wolf Is Back
  
 var waifu = ['https://tenor.com/view/wataten-yuchan-cute-anime-cute-anime-girl-gif-14212816', 'https://tenor.com/view/sway-sweater-lewd-girl-cute-gif-13436986', 'https://tenor.com/view/cute-anime-girl-kawaii-icant-believe-my-eyes-gif-4955396', 'https://tenor.com/view/girl-anime-cute-gif-11190719', 'https://tenor.com/view/anime-girl-cute-gym-bored-gif-13061060'];
-var random_waifu = Math.floor(Math.random()*waify.length)
+var random_waifu = Math.floor(Math.random()*waifu.length)
 
 
 client.on('message', message => {
     if (message.content == prefix + "waifu") {
 	    message.channel.send(random_waifu);
+    }
+});
