@@ -4293,13 +4293,13 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.startWith == prefix + "kiss") {
+    if (message.content.startWith == "$kiss") {
 	    let loved = message.mentions.users.first();
 	    let lover = message.author;
 	    let embed = new Discord.RichEmbed()
 	    .setColor("RANDOM")
 	    .setTitle('${loved} you got a kiss from ${lover}')
-	    embed.set_image(url='https://tenor.com/view/happy-sugar-life-kiss-forehead-cute-anime-sleeping-gif-16465169')
+	    .set_image(url='https://tenor.com/view/happy-sugar-life-kiss-forehead-cute-anime-sleeping-gif-16465169')
 	    message.channel.send(embed);
 	    
     }
