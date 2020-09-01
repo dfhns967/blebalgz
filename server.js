@@ -4302,7 +4302,7 @@ client.on('message', message => {
 	    .setTitle('${loved} you got a kiss from ${lover}')
 	    .set_image(url='https://tenor.com/view/happy-sugar-life-kiss-forehead-cute-anime-sleeping-gif-16465169')
 	    message.channel.send(embed);
-	    
+	    .catch(() => message.react('❎'));
     }
 });
 
