@@ -143,7 +143,7 @@ client.on("message", message => {
       .catch(console.error);
   } else if (message.content.startsWith(prefix + "closet")) {
     if (!message.guild.roles.exists(gg => gg.name === "Support Team"))
-      return message.channel.send(` لازم تسوي رتبة اسمها \`Support Team\`.`);
+      return message.channel.send(` Please create cole and rename it \`Support Team\`.`);
     if (!message.channel.name.startsWith("ticket-"))
       return message.channel.send("This isn't a ticket channel!");
     if (
