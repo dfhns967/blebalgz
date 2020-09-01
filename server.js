@@ -1,3 +1,4 @@
+require("events").EventEmitter.defaultMaxListeners = 1000;
 const { Client, RichEmbed } = require("discord.js");
 var { Util } = require("discord.js");
 const { prefix, devs } = require("./config");
