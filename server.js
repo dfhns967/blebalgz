@@ -4297,10 +4297,7 @@ client.on('message', message => {
     if (message.content.startWith == "$kiss") {
 	    let loved = message.mentions.users.first();
 	    let lover = message.author;
-	    let embed = new Discord.RichEmbed()
-	    .setColor("RANDOM")
-	    .setTitle('${loved} you got a kiss from ${lover}')
-	    message.channel.send(embed);
+	    message.channel.send("'${loved} you got a kiss from ${lover}'");
     }
 });
 
