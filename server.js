@@ -4301,7 +4301,6 @@ client.on('message', message => {
 	    .setColor("RANDOM")
 	    .setTitle('${loved} you got a kiss from ${lover}')
 	    message.channel.send(embed);
-	    .catch(() => message.react('❎'));
     }
 });
 
