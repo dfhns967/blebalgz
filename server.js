@@ -95,7 +95,7 @@ client.on("message", message => {
 
 ////كود تيكت
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "new")) {
+  if (message.content.startsWith(prefix + "Ticket")) {
     const reason = message.content
       .split(" ")
       .slice(1)
@@ -192,7 +192,7 @@ client.on("message", pixelbot => {
     
     if (pixelbot.author.bot) return;
     if (!pixelbot.guild)
-      return pixelbot.reply("**:x: - This Command is only done on Servers**");
+      return pixelbot.reply("**:x: - This Command is only work on Servers**");
     pixelbot.guild.fetchInvites().then(invites => {
      
       let personalInvites = invites.filter(
@@ -235,15 +235,15 @@ client.on("message", message => {
       .setColor("#00000")
       .addField(
         "✽ **Bot Ping** : ",
-        `» ${Date.now() - client.createdTimestamp}` + " ms",
+        `» ${Date.now() - zaid.createdTimestamp}` + " ms",
         true
       )
       .addField("**Servers** :  ", `» ${client.guilds.size}`, true)
       .addField("**Channels** : ", `» ${client.channels.size} `, true)
       .addField("**Users** : ", `» ${client.users.size} `, true)
       .addField("**Bot Name** :  ", `» ${client.user.tag} `, true)
-      .addField("**Bot Owners** :  ", `» <@647142424333910037>,<@706161534233083964>`, true) 
-      .addField("**Bot Dev** :  ", `» <@647142424333910037>,<@706161534233083964>`, true)
+      .addField("**Bot Owners** :  ", `» <@647142424333910037>and<@706161534233083964>`, true) 
+      .addField("**Bot Dev** :  ", `» <@647142424333910037>and<@706161534233083964>`, true)
 
       .setImage("")
       .setFooter(message.author.username, message.client.avatarURL);
