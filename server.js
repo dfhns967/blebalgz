@@ -4282,22 +4282,3 @@ client.on('message', fkk => {
     }
 }); //OT|| The Wolf Is Back
  
-client.on('message', luxy => { 
-if (luxy.author.bot) return;
-if (luxy.content === prefix+"help") {
-let embed = new Discord.RichEmbed()
- 
-.setColor("GREEN")
-.setDescription(`**~~=~~ أوامر الالعاب
-\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-${prefix}fkk
- 
-${prefix}sr3a
- 
-${prefix}puz
- 
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ **`)
-.setFooter('By The Wolf Is Back')
-luxy.channel.send({embed:embed});
-}
-}); 
