@@ -242,8 +242,8 @@ client.on("message", message => {
       .addField("**Channels** : ", `» ${client.channels.size} `, true)
       .addField("**Users** : ", `» ${client.users.size} `, true)
       .addField("**Bot Name** :  ", `» ${client.user.tag} `, true)
-      .addField("**Bot Owner** :  ", `» <@647142424333910037>`, true) 
-      .addField("**Bot Dev** :  ", `» <@647142424333910037>`, true)
+      .addField("**Bot Owners** :  ", `» <@647142424333910037>,<@706161534233083964>`, true) 
+      .addField("**Bot Dev** :  ", `» <@647142424333910037>,<@706161534233083964>`, true)
 
       .setImage("")
       .setFooter(message.author.username, message.client.avatarURL);
