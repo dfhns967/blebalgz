@@ -29,6 +29,39 @@ const queue = new Map();
 var table = require("table").table;
 const Discord = require("discord.js");
 
+client.on('message',async message => {
+
+  if(message.content.startsWith(prefix + 'meme')) {
+
+    let number = Math.floor(Math.random()  * 400)
+
+    if (number > 500) number--;
+
+    message.channel.send (`https://ctk-api.herokuapp.com/meme/${number}`);
+
+  }
+
+}); 
+
+
+client.on('guildMemberUpdate', (ninja, nano,) => {//ninja%nano
+if(ninja.roles.size < nano.roles.size) {
+ let role = nano.roles.filter(r => !ninja.roles.has(r.id)).first();//ninja%nano
+            let embed = new Discord.RichEmbed()
+            .setThumbnail(ninja.guild.iconURL)//ninja%nano
+            .setColor('RANDOM')
+            .setDescription(`
+**New Role**
+ 
+**✨ Role Name:** ( ${role.name} )
+ 
+**🔗 Server:** ${nano.guild.name}`)//ninja%nano
+            .setTimestamp()
+           .setFooter(`🔰 Guild ID : ${ninja.guild.id}`) 
+            nano.user.send(embed); 
+}
+});
+
 client.on("guildCreate", guild => {
   console.log(` RebatBot join Server -- = ${guild.name} = -- , Server Owner -- = ${guild.owner.user.username} = --`)
   client.channels.get("743181523909607547").send('**RebatBot** ``Added`` To Server '+`**${guild.name}**`+' ``Server Owner`` ' +`**${guild.owner.user.username}**` )
@@ -2421,7 +2454,7 @@ client.on("message", async message => {
     let contmessage;
 
     let filter = m => m.author.id === message.author.id;
-    message.channel.send(" |** please right the message now...** ").then(msg => {
+    message.channel.send(" |** please write the message now...** ").then(msg => {
       message.channel
         .awaitMessages(filter, {
           //R.I.P Royal Bot!
@@ -4008,203 +4041,263 @@ client.on("message", async msg => {
     }
   }
 });
-//rps btrolie 
 
-client.on("message", function(message) {
-	var prefix = "-";
-   if(message.content.startsWith(prefix + "rps")) {
-    let messageArgs = message.content.split(" ").slice(1).join(" ");
-    let messageRPS = message.content.split(" ").slice(2).join(" ");
-    let arrayRPS = ['**# - حجره**','**# - ورقه**','**# - مقص**'];
-    let result = `${arrayRPS[Math.floor(Math.random() * arrayRPS.length)]}`;
-    var RpsEmbed = new Discord.RichEmbed()
-    .setAuthor(message.author.username)
-    .setThumbnail(message.author.avatarURL)
-    .addField("حجره","🇷",true)
-    .addField("ورقه","🇵",true)
-    .addField("مقص","🇸",true)
-    message.channel.send(RpsEmbed).then(msg => {
-        msg.react(' 🇷')
-        msg.react("🇸")
-        msg.react("🇵")
-.then(() => msg.react('🇷'))
-.then(() =>msg.react('🇸'))
-.then(() => msg.react('🇵'))
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '🇷' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '🇸' && user.id === message.author.id;
-let reaction3Filter = (reaction, user) => reaction.emoji.name === '🇵' && user.id === message.author.id;
-let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-	    
-let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-let reaction3 = msg.createReactionCollector(reaction3Filter, { time: 12000 });
-reaction1.on("collect", r => {
-        message.channel.send(result)
-})
-reaction2.on("collect", r => {
-        message.channel.send(result)
-})
-reaction3.on("collect", r => {
-        message.channel.send(result)
-})
 
-    })
+client.on('message', message => {
+    if (message.content == prefix + "sr3a") { 
+        var x = ["LioN_Dz",
+"Death Matches",
+"أرض المعجزات",
+"The Wolf",
+"العراق",
+"ألمملكة ألعربية ألسعودية",
+"القسطنطينية",
+"النهاية بل البدابة",
+"امازون",
+"جافاسكربت",
+"سهله مو صعبه",
+"طبق رطب مرق بقر",
+"متجر بلاي",
+"شجرة الصنوبر",
+"عش العصفور",
+"هلا بلخميس هلا هلا",
+"الحوت الأزرق",
+"حبيبي ولله",
+"كنتاكي",
+"توكا",
+"عادل امام",
+"راغب علامة",
+"عمان",
+"مسقط",
+"احبك موت",
+"Playing Minecraft",
+"Music",
+"FaceBooK",
+"YouTube",
+"Infinity",
+"Discor.js",
+"My Brother",
+"Space",
+"Instgram",
+"Google",
+"Viber",
+"WhatsApp",
+"People",
+"Public",
+"Pubg Mobile",
+"Free Fire",
+"Fortnite",
+"ماين كرافت فل داتا",
+"ماين كرافت فل اكسس",
+"اموت بيك",
+"طبق لحم مرقة الدجاج",
+ 
+];
+              var x2 = ["LioN_Dz",
+"Death Matches",
+"أرض المعجزات",
+"The Wolf",
+"العراق",
+"ألمملكة ألعربية ألسعودية",
+"القسطنطينية",
+"النهاية بل البدابة",
+"امازون",
+"جافاسكربت",
+"سهله مو صعبه",
+"طبق رطب مرق بقر",
+"متجر بلاي",
+"شجرة الصنوبر",
+"عش العصفور",
+"هلا بلخميس هلا هلا",
+"الحوت الأزرق",
+"حبيبي ولله",
+"كنتاكي",
+"توكا",
+"عادل امام",
+"راغب علامة",
+"عمان",
+"مسقط",
+"احبك موت",
+"Playing Minecraft",
+"Music",
+"FaceBooK",
+"YouTube",
+"Infinity",
+"Discor.js",
+"My Brother",
+"Space",
+"Instgram",
+"Google",
+"Viber",
+"WhatsApp",
+"People",
+"Public",
+"Pubg Mobile",
+"Free Fire",
+"Fortnite",
+"ماين كرافت فل داتا",
+"ماين كرافت فل اكسس",
+"اموت بيك",
+"طبق لحم مرقة الدجاج",
+ 
+ 
+ 
+ 
+        ];
+ 
+        var x3 = Math.floor(Math.random()*x.length)
+        message.channel.send(` الكملة هي :  __**${x[x3]}**__
+لديك 15 ثانية لكتابة الكلمة بسرعة`).then(msg1=> {
+            var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 15000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return message.channel.send(`✖لقد انتهى الوقت ولم تكتب الكلمة في الوقت المناشب 
+            الإجآبة الصحيحة هي __**${x2[x3]}**__`)
+        })
+ 
+        r.then((collected)=> {
+            message.channel.send(`${collected.first().author} احسنت عملا لقد كتبت الكلمة قبل انتهاء الوقت✔`);
+        })
+        }) //OT|| The Wolf Is Back
+    }
+})
+ 
+client.on('message', puz => {
+    if (puz.content == prefix + "puz") {
+        var x = ["ما هي حاسة الشم عند الثعبان🤔 ؟",
+"ما هو الشي الذي يكسو الناس و هو عار بدون ملابس🤔 ؟",
+"ما هو الشي الذي لا يجري و لا يمشي 🤔؟",
+"ما هو إسم الشهر الميلادي الذي إذا حذفت أوله , تحول إلى إسم فاكهه🤔 ؟",
+"ما هو الشي الذي لا يدخل الإ إذا ضرب على رأسه 🤔؟",
+"ما هو الشيء الذي اسمه على لونه🤔 ؟",
+"ما هو الشيء الذي يأكل ولا يشبع🤔؟",
+"ما هو الشي الذي كلما زاد نقص 🤔؟",
+"ما هي التي تحرق نفسها لتفيد غيرها🤔 ؟",
+"كله ثقوب و مع ذلك يحفظ الماء🤔 ؟",
+"ما هو الذي لحمه من الداخل و عظمه من الخارج🤔 ؟",
+"يستطيع ان يخترق الزجاج من دون كسره فمن هو🤔؟",
+];
+        var x2 = ['اللسان',
+		"الابره",
+        "الماء",
+		"تموز",
+		"المسمار",
+		"البيضة",
+   "النار", //OT|| The Wolf Is Back
+		"العمر",
+		"الشمعة",
+		"الاسفنج",
+		"السلحفاة",
+		"الضوء",
+ 
+ 
+ 
+ 
+        ];
+ 
+        var x3 = Math.floor(Math.random()*x.length)
+        puz.channel.send(`السؤال هو:  __**${x[x3]}**__
+لديك 15 ثانية لحل اللغز`).then(msg1=> {
+            var r = puz.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 15000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return puz.channel.send(` ✖لقد انتهى الوقت ولم تحل اللغز
+ 
+ 
+           `)
+           //OT|| The Wolf Is Back
+        })
+ 
+        r.then((collected)=> {
+            puz.channel.send(`${collected.first().author} احسنت عملا لقد حللت اللغز في قبل انهاء الوقت✔ `);
+        })
+        })
+    }
+}) //OT|| The Wolf Is Back
+ 
+client.on('message', fkk => {
+    if (fkk.content == prefix + "fkk") {
+        var x = ["المتاح للجميع لا يتاح لي",
+"اكرهك بس احبك",
+"Minecraft", //OT|| The Wolf Is Back
+"بريء بس مذنب",
+"بسم الله الرحمن الرحيم",
+"الضرورة وقت الحصورة",
+"دنيا",
+"صارم",
+"مات بس عاش", //OT|| The Wolf Is Back
+"شعبان بس جوعان",
+"ألعراق",
+"المملكة العربية السعودية",
+"The Wolf",
+"Btrolie Sto",
+];
+        var x2 = ['ا ل م ت ا ح ل ل ج م ي ع ل ا ي ت ا ح ل ى',
+		"ا ك ر ه ك ب س ا ح ب ك",
+        "ف ي ل ا",
+		"ب ر ي ء ب س م ذ ن ب",
+		"ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م",
+		"ا ل ض ر و ر ة و ق ت ا ل ح ص و ر ة",
+		"د ن ي ا",
+		"ص ا ر م",
+		"م ا ت ب س ع ا ش",
+		"ش ع ب ا ن ب س ج و ع ا ن",
+		"أ ل ع ر ا ق",
+"ا ل م م ل ك ة ا ل ع ر ب ي ة ا ل س و ع و د ي ة",
+"T h e W o l f",
+"B t r o l i e S t o",
+ 
+       //OT|| The Wolf Is Back
+ 
+ 
+        //OT|| The Wolf Is Back
+ 
+ 
+ 
+        ];
+ 
+        var x3 = Math.floor(Math.random()*x.length)
+        fkk.channel.send(`الكلمة هي :  __**${x[x3]}**__
+لديك 15 ثانية لتفكيك الكلمة`).then(msg1=> {
+            var r = fkk.channel.awaitMessages(msg => msg.content == x2[x3], {
+                maxMatches : 1,
+                time : 15000,
+                errors : ['time']
+            })
+        r.catch(() => {
+            return fkk.channel.send(`✖ لقد انتهى الوقت ولم تفكك الكلمة في الوقت المناسب
+            كان عليك ان تجيب هكذا __**${x2[x3]}**__`)
+        }) //OT|| The Wolf Is Back
+ 
+        r.then((collected)=> {
+            fkk.channel.send(`${collected.first().author} احسنت عملا لقد فككت الكلمة قبل انتهاء الوقت ✔`);
+        })
+        }) //OT|| The Wolf Is Back
+    }
+}); //OT|| The Wolf Is Back
+ 
+client.on('message', luxy => { 
+if (luxy.author.bot) return;
+if (luxy.content === prefix+"help") {
+let embed = new Discord.RichEmbed()
+ 
+.setColor("GREEN")
+.setDescription(`**~~=~~ أوامر الالعاب
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+${prefix}fkk
+ 
+${prefix}sr3a
+ 
+${prefix}puz
+ 
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ **`)
+.setFooter('By The Wolf Is Back')
+luxy.channel.send({embed:embed});
 }
 }); 
- //cuttweet btrolie 
-const cuttweets = [
-  'كت تويت ‏| تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
-  'كت تويت | أكثر شيء يُسكِت الطفل برأيك؟',
-  'كت تويت | الحرية لـ ... ؟',
-  'كت تويت | قناة الكرتون المفضلة في طفولتك؟',
-  'كت تويت ‏| كلمة للصُداع؟',
-  'كت تويت ‏| ما الشيء الذي يُفارقك؟',
-  'كت تويت | موقف مميز فعلته مع شخص ولا يزال يذكره لك؟',
-  'كت تويت ‏| أيهما ينتصر، الكبرياء أم الحب؟',
-  'كت تويت | بعد ١٠ سنين ايش بتكون ؟',
-  'كت تويت ‏| مِن أغرب وأجمل الأسماء التي مرت عليك؟',
-  '‏كت تويت | عمرك شلت مصيبة عن شخص برغبتك ؟',
-  'كت تويت | أكثر سؤال وجِّه إليك مؤخرًا؟',
-  '‏كت تويت | ما هو الشيء الذي يجعلك تشعر بالخوف؟',
-  '‏كت تويت | وش يفسد الصداقة؟',
-  '‏كت تويت | شخص لاترفض له طلبا ؟',
-  '‏كت تويت | كم مره خسرت شخص تحبه؟.',
-  '‏كت تويت | كيف تتعامل مع الاشخاص السلبيين ؟',
-  '‏كت تويت | كلمة تشعر بالخجل اذا قيلت لك؟',
-  '‏كت تويت | جسمك اكبر من عٌمرك او العكسّ ؟!',
-  '‏كت تويت |أقوى كذبة مشت عليك ؟',
-  '‏كت تويت | تتأثر بدموع شخص يبكي قدامك قبل تعرف السبب ؟',
-  'كت تويت | هل حدث وضحيت من أجل شخصٍ أحببت؟',
-  '‏كت تويت | أكثر تطبيق تستخدمه مؤخرًا؟',
-  '‏كت تويت | ‏اكثر شي يرضيك اذا زعلت بدون تفكير ؟',
-  '‏كت تويت | وش محتاج عشان تكون مبسوط ؟',
-  '‏كت تويت | مطلبك الوحيد الحين ؟',
-  '‏كت تويت | هل حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
-  'اش رئيك بسيرفرنا'
-]
- 
-client.on ('message', async (toxicc) => {
-  if (!toxicc.guild || toxicc.author.bot) return false;
-  var prefix = "-";
-  switch (toxicc.content.split(' ') [0]){
-  case prefix + 'cut':  
-	 
-      var embed = new Discord.RichEmbed().setTitle("Cut Tweet")
-      .setDescription(cuttweets [Math.floor (Math.random () * cuttweets.length)])
-      .setFooter(toxicc.author.tag, toxicc.author.displayAvatarURL)
-      toxicc.channel.send (embed);
-      break;
-  }
-})
-//lo5erok btrolie 
-var viper = ["https://f.top4top.net/p_682it2tg6.png%22","https://e.top4top.net/p_682a1cus5.png%22","https://d.top4top.net/p_682pycol4.png%22","https://c.top4top.net/p_682vqehy3.png%22","https://b.top4top.net/p_682mlf9d2.png%22","https://a.top4top.net/p_6827dule1.png%22","https://b.top4top.net/p_682g1meb10.png%22","https://a.top4top.net/p_682jgp4v9.png%22","https://f.top4top.net/p_682d4joq8.png%22","https://e.top4top.net/p_6828o0e47.png%22","https://d.top4top.net/p_6824x7sy6.png%22","https://c.top4top.net/p_682gzo2l5.png%22","https://b.top4top.net/p_68295qg04.png%22","https://a.top4top.net/p_682zrz6h3.png%22","https://f.top4top.net/p_6828vkzc2.png%22","https://e.top4top.net/p_682i8tb11.png",]
-    client.on('message', message => {
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'lo5')) {
-      if(!message.channel.guild) return message.reply('** ممنوع كتابة الاوامر في خاص البوت**');
-         var lo = new Discord.RichEmbed()
-	 .setImage(viper[Math.floor(Math.random() * viper.length)])
- message.channel.sendEmbed(lo);
-    }
-});
-//fkk btrolie 
-var memes =["https://cdn.discordapp.com/attachments/422454766468202511/426482204835708938/fkk1.png","https://cdn.discordapp.com/attachments/422454766468202511/426482399757467648/fkk2.png","https://cdn.discordapp.com/attachments/422454766468202511/426486610729762816/fkk3.png","https://cdn.discordapp.com/attachments/422454766468202511/426486726907789332/fkk4.png","https://cdn.discordapp.com/attachments/422454766468202511/426486904343625729/fkk5.png","https://cdn.discordapp.com/attachments/422454766468202511/426487095943495703/fkk6.png","https://cdn.discordapp.com/attachments/422454766468202511/426487229796450304/fkk7.png","https://cdn.discordapp.com/attachments/422454766468202511/426487556461559819/fkk8.png","https://cdn.discordapp.com/attachments/422454766468202511/426487784736423956/fkk9.png","https://cdn.discordapp.com/attachments/422454766468202511/426487945554558991/fkk10.png","https://cdn.discordapp.com/attachments/422454766468202511/426488069672140800/fkk11.png","https://cdn.discordapp.com/attachments/422454766468202511/426488213872312330/fkk12.png","https://cdn.discordapp.com/attachments/422454766468202511/426488358097649688/fkk13.png","https://cdn.discordapp.com/attachments/422454766468202511/426488491359338516/fkk14.png"]
-client.on('message', message => {
-             
-if(message.content.startsWith(prefix + 'fkk')) {
-  if(!message.channel.guild) return message.reply('** ممنوع كتابة الاوامر في خاص البوت**');
-     var embed = new Discord.RichEmbed()
-.setImage(memes[Math.floor(Math.random() * memes.length)])
-                .setColor('#7400ff')
-message.channel.sendEmbed(embed);
-}
-});
-
-//اسرع btrolie
-var viper = ["https://imgur.com/jxNXIRi.png","","https://imgur.com/bZ77C4N.png","https://imgur.com/JoEkxeB.png","https://imgur.com/ytMmA53.png","https://imgur.com/Tz6leGv.png","https://imgur.com/5cMhvzx.png","https://imgur.com/aP6CJjh.png","https://imgur.com/EZb852E.png","https://imgur.com/kIiz33v.png"]
-    client.on('message', message => {
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'sr3')) {
-      if(!message.channel.guild) return message.reply('** ممنوع كتابة الاوامر في خاص البوت**');
-         var lo = new Discord.RichEmbed()
-.setImage(viper[Math.floor(Math.random() * viper.length)])
-message.channel.sendEmbed(lo);
-    }
-});
-
-//sr7 btrolie 
-const Sra7a = [
-     'صراحه  |  صوتك حلوة؟',
-     'صراحه  |  التقيت الناس مع وجوهين؟',
-     'صراحه  |  شيء وكنت تحقق اللسان؟',
-     'صراحه  |  أنا شخص ضعيف عندما؟',
-     'صراحه  |  هل ترغب في إظهار حبك ومرفق لشخص أو رؤية هذا الضعف؟',
-     'صراحه  |  يدل على أن الكذب مرات تكون ضرورية شي؟',
-     'صراحه  |  أشعر بالوحدة على الرغم من أنني تحيط بك كثيرا؟',
-     'صراحه  |  كيفية الكشف عن من يكمن عليك؟',
-     'صراحه  |  إذا حاول شخص ما أن يكرهه أن يقترب منك ويهتم بك تعطيه فرصة؟',
-     'صراحه  |  أشجع شيء حلو في حياتك؟',
-     'صراحه  |  طريقة جيدة يقنع حتى لو كانت الفكرة خاطئة" توافق؟',
-     'صراحه  |  كيف تتصرف مع من يسيئون فهمك ويأخذ على ذهنه ثم ينتظر أن يرفض؟',
-     'صراحه  |  التغيير العادي عندما يكون الشخص الذي يحبه؟',
-     'صراحه  |  المواقف الصعبة تضعف لك ولا ترفع؟',
-     'صراحه  |  نظرة و يفسد الصداقة؟',
-     'صراحه  |  ‏‏إذا أحد قالك كلام سيء بالغالب وش تكون ردة فعلك؟',
-     'صراحه  |  شخص معك بالحلوه والمُره؟',
-     'صراحه  |  ‏هل تحب إظهار حبك وتعلقك بالشخص أم ترى ذلك ضعف؟',
-     'صراحه  |  تأخذ بكلام اللي ينصحك ولا تسوي اللي تبي؟',
-     'صراحه  |  وش تتمنى الناس تعرف عليك؟',
-     'صراحه  |  ابيع المجرة عشان؟',
-     'صراحه  |  أحيانا احس ان الناس ، كمل؟',
-     'صراحه  |  مع مين ودك تنام اليوم؟',
-     'صراحه  |  صدفة العمر الحلوة هي اني؟',
-     'صراحه  |  الكُره العظيم دايم يجي بعد حُب قوي " تتفق؟',
-     'صراحه  |  صفة تحبها في نفسك؟',
-     'صراحه  |  ‏الفقر فقر العقول ليس الجيوب " ، تتفق؟',
-     'صراحه  |  تصلي صلواتك الخمس كلها؟',
-     'صراحه  |  ‏تجامل أحد على راحتك؟',
-     'صراحه  |  اشجع شيء سويتة بحياتك؟',
-     'صراحه  |  وش ناوي تسوي اليوم؟',
-     'صراحه  |  وش شعورك لما تشوف المطر؟',
-     'صراحه  |  غيرتك هاديه ولا تسوي مشاكل؟',
-     'صراحه  |  ما اكثر شي ندمن عليه؟',
-     'صراحه  |  اي الدول تتمنى ان تزورها؟',
-     'صراحه  |  متى اخر مره بكيت؟',
-     'صراحه  |  تقيم حظك ؟ من عشره؟',
-     'صراحه  |  هل تعتقد ان حظك سيئ؟',
-     'صراحه  |  شـخــص تتمنــي الإنتقــام منـــه؟',
-     'صراحه  |  كلمة تود سماعها كل يوم؟',
-     'صراحه  |  **هل تُتقن عملك أم تشعر بالممل؟',
-     'صراحه  |  هل قمت بانتحال أحد الشخصيات لتكذب على من حولك؟',
-     'صراحه  |  متى آخر مرة قمت بعمل مُشكلة كبيرة وتسببت في خسائر؟',
-     'صراحه  |  ما هو اسوأ خبر سمعته بحياتك؟',
-     '‏صراحه | هل جرحت شخص تحبه من قبل ؟',
-     'صراحه  |  ما هي العادة التي تُحب أن تبتعد عنها؟',
-     '‏صراحه | هل تحب عائلتك ام تكرههم؟',
-     '‏صراحه  |  من هو الشخص الذي يأتي في قلبك بعد الله – سبحانه وتعالى- ورسوله الكريم – صلى الله عليه وسلم؟',
-     '‏صراحه  |  هل خجلت من نفسك من قبل؟',
-     '‏صراحه  |  ما هو ا الحلم  الذي لم تستطيع ان تحققه؟',
-     '‏صراحه  |  ما هو الشخص الذي تحلم به كل ليلة؟',
-     '‏صراحه  |  هل تعرضت إلى موقف مُحرج جعلك تكره صاحبهُ؟',
-	   '‏صراحه  |  هل قمت بالبكاء أمام من تُحب؟',
-     '‏صراحه  |  ماذا تختار حبيبك أم صديقك؟',
-     '‏صراحه  | هل حياتك سعيدة أم حزينة؟',
-     'صراحه  |  ما هي أجمل سنة عشتها بحياتك؟',
-     '‏صراحه  |  ما هو عمرك الحقيقي؟',
-     '‏صراحه  |  ما اكثر شي ندمن عليه؟',
-	 'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
-     'صراحه | هل قبلت فتاه؟'
-   ]
-   client.on('message', message => {
- if(message.content.startsWith(prefix + 'sr7')) {
-  if(!message.channel.guild) return message.reply('** ممنوع كتابة الاوامر في خاص البوت**');
-  var client = new Discord.RichEmbed()
-  .setTitle("لعبة صراحة ..")
-  .setColor('RANDOM')
-  .setDescription(`${Sra7a[Math.floor(Math.random() * Sra7a.length)]}`)
-  .setImage("https://cdn.discordapp.com/attachments/371269161470525444/384103927060234242/125.png")
-                  .setTimestamp()
-
-   message.channel.sendEmbed(client);
-   message.react("??")
- }
-});
