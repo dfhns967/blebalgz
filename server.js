@@ -235,7 +235,7 @@ client.on("message", message => {
       .setColor("#00000")
       .addField(
         "✽ **Bot Ping** : ",
-        `» ${Date.now() - zaid.createdTimestamp}` + " ms",
+        `» ${Date.now() - Client.createdTimestamp}` + " ms",
         true
       )
       .addField("**Servers** :  ", `» ${client.guilds.size}`, true)
