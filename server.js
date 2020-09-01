@@ -4294,7 +4294,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.startsWith == "$kiss") {
+    if (message.content.startsWith("$kiss")) {
 	    let loved = message.mentions.users.first();
 	    let lover = message.author;
 	    let embed = new Discord.RichEmbed()
