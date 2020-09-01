@@ -4288,4 +4288,4 @@ var random_waifu = Math.floor(Math.random()*waify.length)
 
 client.on('message', message => {
     if (message.content == prefix + "waifu") {
-	    message.channel.send(random_waifu)
+	    message.channel.send(random_waifu);
