@@ -4287,7 +4287,7 @@ client.on('message', fkk => {
 }); //OT|| The Wolf Is Back
  
 var waifu = ['https://tenor.com/view/wataten-yuchan-cute-anime-cute-anime-girl-gif-14212816', 'https://tenor.com/view/sway-sweater-lewd-girl-cute-gif-13436986', 'https://tenor.com/view/cute-anime-girl-kawaii-icant-believe-my-eyes-gif-4955396', 'https://tenor.com/view/girl-anime-cute-gif-11190719', 'https://tenor.com/view/anime-girl-cute-gym-bored-gif-13061060'];
-var random_waifu = Math.floor(Math.random()*waifu.length)
+var random_waifu = Math.floor(Math.random()*client.length)
 
 
 client.on('message', message => {
@@ -4303,7 +4303,7 @@ client.on('message', message => {
 	    let embed = new Discord.RichEmbed()
 	    .setColor('RANDOM')
 	    .setTitle('`${loved} you got a kiss from ${lover}`')
-	    .set_image(url='https://tenor.com/view/happy-sugar-life-kiss-forehead-cute-anime-sleeping-gif-16465169embed')
+	    .set_image("https://tenor.com/view/happy-sugar-life-kiss-forehead-cute-anime-sleeping-gif-16465169embed")
 	    
 	    message.channel.send(embed);
     }
