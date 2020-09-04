@@ -4310,3 +4310,65 @@ client.on('message', message => {
     }
 });
 
+client.on('message' , message => {
+  var prefix = "-"
+  
+  if (message.author.bot) return;
+  if (message.content.startsWith(prefix + "contact")) {
+  if (!message.channel.guild) return;
+  
+  
+  
+  let args = message.content.split(" ").slice(1).join(" ");
+  
+  
+  
+  client.users.get("647142424333910037").send(
+      "\n" + "**" + "● السيرفر :" + "**" +
+      "\n" + "**" + "» " + message.guild.name + "**" +
+      "\n" + "**" + " ● المرسل : " + "**" +
+      "\n" + "**" + "» " + message.author.tag + "**" +
+      "\n" + "**" + " ● الرسالة : " + "**" +
+      "\n" + "**" + args + "**")
+  
+  let embed = new Discord.RichEmbed()
+       .setAuthor(message.author.username, message.author.avatarURL)
+       .setDescription('📬 تم ارسال الرسالة الى صاحب البوت بنجاح')
+       .setThumbnail(message.author.avatarURL) 
+       .setFooter("Rebat | Bot")
+                                                  
+  
+  message.channel.send(embed);
+  
+  
+  }
+      
+  });
+
+client.on("channelCreate", async channel => {
+  const rebellog = client.channels.find("name", "hack-log"), /// hack-log تعديل مهم سوي روم اسمو
+    Oguild = channel.guild,
+    Onumber = 3,
+    Otime = 10000;
+  const audit = await channel.guild.fetchAuditLogs({ limit: 1 });
+  const channelcreate = audit.entries.first().executor;
+  console.log(
+    ` A ${channel.type} Channel called ${channel.name} was Created By ${channelcreate.tag}`
+  );
+  if (!channelc[channelcreate.id]) {
+    channelc[channelcreate.id] = {
+      created: 0
+    };
+  }
+  channelc[channelcreate.id].created += 1;
+  if (channelc[channelcreate.id].created >= Onumber) {
+    Oguild.members.get(channelcreate.id).kick();
+    rebellog.send(`<@!${channelcreate.id}>
+حآول العبث بالسيرفر @everyone`);
+    channel.guild.owner.send(`<@!${channelcreate.id}>
+حآول العبث بالسيرفر ${channel.guild.name}`);
+  }
+  setTimeout(() => {
+    channelc[channelcreate.id].created = 0;
+  }, Otime);
+});
